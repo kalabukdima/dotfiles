@@ -1,0 +1,17 @@
+[user]
+	email = kalabukdima@gmail.com
+	name = kalabukdima
+[core]
+	editor = vim
+[color]
+	status = auto
+	branch = auto
+	interactive = auto
+	diff = auto
+[diff]
+	tool = vimdiff
+[alias]
+	st = status
+	lg = log --graph --decorate
+[merge]
+	tool = vimdiff
