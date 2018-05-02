@@ -1,0 +1,11 @@
+alias py='python2'
+
+# Ubuntu versions of grep and diff don't support --color.
+alias grep='grep'
+alias diff='diff'
+
+# Development in arcadia.
+alias ya='/home/kalabukdima/arcadia/ya'
+alias gya='/home/kalabukdima/space/git-svn/arcadia/ya'
+alias hg='ya tool hg'
+
