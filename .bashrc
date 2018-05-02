@@ -16,12 +16,12 @@ exitstatus()
 {
     RETURN=$?
     if [[ ${RETURN} == 0 ]]; then
-        echo "\$"
+        echo ""
     else
-        echo "${RED}${RETURN}\$${RESET}"
+        echo "$(echo -e \\001)${RED}$(echo -e \\002)${RETURN}"
     fi
 }
-export PS1='[\[${GREEN}\]\u\[${RESET}\] \w]$(exitstatus) '
+export PS1="[\[${GREEN}\]\u\[${RESET}\] \w]\$(exitstatus)\$ \[${RESET}\]"
 
 # Aliases
 alias l='ls --color=auto -gohAp --group-directories-first'
