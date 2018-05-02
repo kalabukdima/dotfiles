@@ -37,6 +37,7 @@ alias rex='pkill xcape ; xcape'
 alias packer='packer --noedit'
 alias sudo='sudo '
 alias bc='bluetoothctl'
+alias feh='feh --keep-zoom-vp --scale-down -B black'
 
 # Less coloring
 export LESS=-R
