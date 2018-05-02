@@ -4,7 +4,6 @@ if [[ $- != *i* ]] ; then
 fi
 
 
-#export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/bin:/usr/x86_64-pc-linux-gnu/gcc-bin/4.9.4"
 export LESSHISTFILE="~/.config/.lesshst"
 export EDITOR=vim
 
