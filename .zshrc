@@ -16,11 +16,8 @@ unsetopt beep
 
 
 
-export LESSHISTFILE="~/.config/.lesshst"
-export EDITOR=vim
-# if [[ $TERM == 'screen' ]]; then
-#     export TERM='screen-256color'
-# fi
+# Reuse basic config from .bashrc.
+source ~/.bashrc
 
 # Completion settings {{{
 # Origin: .oh-my-zsh/lib/completion.zsh
@@ -150,24 +147,6 @@ export LESS_TERMCAP_us=$'\e[01;30m'    # begin underline
 export LESS_TERMCAP_me=$'\e[0m'        # reset bold/blink
 export LESS_TERMCAP_se=$'\e[0m'        # reset reverse video
 export LESS_TERMCAP_ue=$'\e[0m'        # reset underline
-# }}}
-
-# Aliases {{{
-alias l='ls --color=auto -gohAp --group-directories-first'
-alias grep='grep --color=auto'
-alias diff='diff --color=auto'
-alias gdb='gdb -q'
-alias py='python3'
-alias jn='jupyter notebook'
-alias ip='ip -c'
-alias tmux='tmux -2'
-alias cal='cal -m'
-alias sc='systemctl'
-alias rex='pkill xcape ; xcape'
-alias packer='packer --noedit'
-alias sudo='sudo '
-alias bc='bluetoothctl'
-alias feh='feh --keep-zoom-vp --scale-down -B black'
 # }}}
 
 # vim:fdm=marker:foldlevel=0
