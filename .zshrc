@@ -95,7 +95,7 @@ bindkey "${terminfo[kdch1]}" delete-char              # [Delete] - delete forwar
 # }}}
 
 # Autosuggestions plugin {{{
-source ~/.zsh/zsh-autosuggestions.zsh
+source ~/config/zsh-autosuggestions/zsh-autosuggestions.zsh
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=7'
 bindkey '\C-u' autosuggest-accept
 # }}}
