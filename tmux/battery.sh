@@ -24,4 +24,3 @@ if grep -q "harging" /sys/class/power_supply/BAT0/status; then
 fi
 
 echo "$line"
-

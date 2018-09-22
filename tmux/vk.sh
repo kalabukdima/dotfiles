@@ -33,4 +33,3 @@ if [[ $messages -gt 0 ]]; then
 fi
 
 echo "$line"
-
