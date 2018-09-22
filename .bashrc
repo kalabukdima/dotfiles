@@ -36,6 +36,7 @@ alias sc='systemctl'
 alias rex='pkill xcape ; xcape'
 alias packer='packer --noedit'
 alias sudo='sudo '
+alias watch='watch '
 alias bc='bluetoothctl'
 alias feh='feh --keep-zoom-vp --scale-down -B black'
 
