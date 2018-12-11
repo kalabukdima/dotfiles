@@ -50,4 +50,12 @@ export LESS_TERMCAP_me=$'\e[0m'        # reset bold/blink
 export LESS_TERMCAP_se=$'\e[0m'        # reset reverse video
 export LESS_TERMCAP_ue=$'\e[0m'        # reset underline
 
+# Running ssh-agent
+if ! pgrep -u "$USER" ssh-agent > /dev/null; then
+    ssh-agent > ~/.config/.ssh-agent
+fi
+if [[ "$SSH_AGENT_PID" == "" ]]; then
+    eval "$(<~/.config/.ssh-agent)" > /dev/null
+fi
+
 source ~/config/.bashrc.local
