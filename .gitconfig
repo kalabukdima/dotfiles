@@ -18,3 +18,5 @@
 
 [include]
     path = ~/config/.gitconfig.local
+[pull]
+	ff = only
