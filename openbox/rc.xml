@@ -17,7 +17,10 @@
     <raiseOnFocus>no</raiseOnFocus>
     <!-- when followMouse is enabled, and a window is given focus by moving the
        mouse into it, also raise the window -->
+    <monitorFollowMouse>no</monitorFollowMouse>
+    <!-- Move focus to another monitor when the mouse enters that monitor -->
   </focus>
+
   <placement>
     <policy>Smart</policy>
     <!-- 'Smart' or 'UnderMouse' -->
@@ -78,7 +81,7 @@
      cases. -->
   <margins>
     <top>0</top>
-    <bottom>25</bottom>
+    <bottom>28</bottom>
     <left>0</left>
     <right>0</right>
   </margins>
@@ -257,6 +260,24 @@
           <enabled>true</enabled>
           <name>Browser</name>
         </startupnotify>
+        <command>firefox</command>
+      </action>
+    </keybind>
+    <keybind key="C-A-f">
+      <action name="Execute">
+        <startupnotify>
+          <enabled>true</enabled>
+          <name>Browser</name>
+        </startupnotify>
+        <command>firefox-developer-edition</command>
+      </action>
+    </keybind>
+    <keybind key="C-A-h">
+      <action name="Execute">
+        <startupnotify>
+          <enabled>true</enabled>
+          <name>Browser</name>
+        </startupnotify>
         <command>chromium</command>
       </action>
     </keybind>
@@ -277,17 +298,27 @@
     </keybind>
     <keybind key="XF86AudioLowerVolume">
       <action name="Execute">
-        <command>amixer set Master 2048- unmute</command>
+        <command>amixer set Master 4%-</command>
       </action>
     </keybind>
     <keybind key="XF86AudioRaiseVolume">
       <action name="Execute">
-        <command>amixer set Master 2048+ unmute</command>
+        <command>amixer set Master 4%+</command>
       </action>
     </keybind>
     <keybind key="XF86AudioStop">
       <action name="Execute">
         <command>cmus-remote --stop</command>
+      </action>
+    </keybind>
+    <keybind key="XF86MonBrightnessDown">
+      <action name="Execute">
+        <command>xbacklight -dec 5</command>
+      </action>
+    </keybind>
+    <keybind key="XF86MonBrightnessUp">
+      <action name="Execute">
+        <command>xbacklight -inc 5</command>
       </action>
     </keybind>
     <!-- keyboard XF86AudioPause -->
@@ -336,7 +367,7 @@
     </keybind>
     <keybind key="C-A-x">
       <action name="Execute">
-        <command>/home/dima/space/scripts/rexcape.sh</command>
+        <command>/home/dima/config/scripts/rexcape.sh</command>
       </action>
     </keybind>
 <!-- These are optional keybindings which need to be tailored for whichever

@@ -1,8 +1,6 @@
 #!/bin/sh
 xset r rate 200 37
-~/.fehbg
-chromium&
-export EDITOR=vim
-xfce4-terminal --fullscreen -x tmux new cmus&
+xfce4-terminal --fullscreen -x tmux&
+syndaemon -m 50 -i 0.35 -d -t
 telegram-desktop&
-xcape
+xcape&
