@@ -1,13 +1,19 @@
-ln -sf ~/config/.bashrc ~
+ln -sfv ~/config/.bashrc ~
 touch ~/config/.bashrc.local
 
-ln -sf ~/config/.zshrc ~
+ln -sfv ~/config/.zshrc ~
 touch ~/config/.zshrc.local
 
-ln -sf ~/config/.tmux.conf ~
+ln -sfv ~/config/.tmux.conf ~
 touch ~/config/.tmux.conf.local
 
-ln -sf ~/config/.gitconfig ~
+ln -sfv ~/config/.gitconfig ~
 
 mkdir -p ~/.config
-ln -sf ~/config/ranger/ ~/.config/
+ln -sfv ~/config/ranger/ ~/.config/
+
+ln -sfv ~/config/openbox/ ~/.config/
+
+sudo -n mkdir -p /usr/share/kbd/keymaps/i386/workman
+sudo -n cp -v kbd/keymaps/i386/workman/* /usr/share/kbd/keymaps/i386/workman/
+sudo -n cp -v kbd/keymaps/i386/include/workman-layout.inc /usr/share/kbd/keymaps/i386/include
