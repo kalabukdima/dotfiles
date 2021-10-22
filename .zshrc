@@ -125,8 +125,8 @@ function get_prompt {
     PROMPT=""
 
     # Username
-    CAN_I_RUN_SUDO=$(sudo -n uptime 2>&1|grep "load"|wc -l)
-    if [ ${CAN_I_RUN_SUDO} -gt 0 ]
+    CAN_I_RUN_SUDO=$(sudo -n true 2>&1|grep "sudo"|wc -l)
+    if [ ${CAN_I_RUN_SUDO} -eq 0 ]
     then
         PROMPT="%{$fg_bold[red]%}%n%{$reset_color%} "
     else
