@@ -54,6 +54,9 @@ if [[ -z "$LS_COLORS" ]]; then
   (( $+commands[dircolors] )) && eval "$(dircolors -b)"
 fi
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+
+# Always update info about existing binaries
+zstyle ':completion:*' rehash true
 # }}}
 
 # Keybindings {{{
