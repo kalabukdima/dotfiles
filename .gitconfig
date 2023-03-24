@@ -1,8 +1,9 @@
 [user]
 	email = kalabukdima@gmail.com
-	name = Kalabuk Dmitriy
+	name = Kalabuk Dzmitry
 [core]
 	editor = vim
+	excludesFile = ~/.gitignore
 [color]
 	status = auto
 	branch = auto
@@ -17,6 +18,13 @@
 	tool = vimdiff
 
 [include]
-    path = ~/config/.gitconfig.local
+	path = ~/config/.gitconfig.local
 [pull]
 	ff = only
+[push]
+	autoSetupRemote = true
+[init]
+	defaultBranch = master
+
+[includeIf "gitdir:~/space/proxima/"]
+	path = ~/space/proxima/.gitconfig
