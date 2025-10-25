@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 fpath+=~/.zsh/functions
 # The following lines were added by compinstall {{{
 
@@ -109,45 +116,50 @@ bindkey "${terminfo[kdch1]}" delete-char              # [Delete] - delete forwar
 # Autosuggestions plugin {{{
 source ~/config/zsh-autosuggestions/zsh-autosuggestions.zsh
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=7'
-bindkey '\C-u' autosuggest-accept
+# bindkey '\C-e' autosuggest-accept
 # }}}
 
 # Set prompt {{{
+
+source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
 # Origins:
 # .oh-my-zsh/themes/gentoo.zsh-theme
 # https://github.com/Parth/dotfiles/blob/master/zsh/prompt.sh
 
-autoload -U colors && colors
-setopt promptsubst
-
-function prompt_char {
-    if [ $UID -eq 0 ]; then echo "#"; else echo $; fi
-}
-
-function get_prompt {
-    PROMPT=""
-
-    # Username
-    CAN_I_RUN_SUDO=$(sudo -n true 2>&1|grep "sudo"|wc -l)
-    if [ ${CAN_I_RUN_SUDO} -eq 0 ]
-    then
-        PROMPT="%{$fg_bold[red]%}%n%{$reset_color%} "
-    else
-        PROMPT="%(!.%{$fg_bold[red]%}.%{$fg_bold[green]%}%n)%{$reset_color%} "
-    fi
-
-    # Working directory
-    PROMPT+="%{$fg_bold[blue]%}%(!.%1~.%~)%{$reset_color%} "
-
-    # Status code
-    PROMPT+="%{$fg_bold[red]%}%(?..%? )%{$reset_color%}"
-
-    # $ / #
-    PROMPT+="%{$fg_bold[blue]%}%_$(prompt_char)%{$reset_color%} "
-    echo $PROMPT
-}
-
-PROMPT="\$(get_prompt)"
+# autoload -U colors && colors
+# setopt promptsubst
+# 
+# function prompt_char {
+#     if [ $UID -eq 0 ]; then echo "#"; else echo $; fi
+# }
+# 
+# function get_prompt {
+#     PROMPT=""
+# 
+#     # Username
+#     CAN_I_RUN_SUDO=$(sudo -n true 2>&1|grep "sudo"|wc -l)
+#     if [ ${CAN_I_RUN_SUDO} -eq 0 ]
+#     then
+#         PROMPT="%{$fg_bold[red]%}%n%{$reset_color%} "
+#     else
+#         PROMPT="%(!.%{$fg_bold[red]%}.%{$fg_bold[green]%}%n)%{$reset_color%} "
+#     fi
+# 
+#     # Working directory
+#     PROMPT+="%{$fg_bold[blue]%}%(!.%1~.%~)%{$reset_color%} "
+# 
+#     # Status code
+#     PROMPT+="%{$fg_bold[red]%}%(?..%? )%{$reset_color%}"
+# 
+#     # $ / #
+#     PROMPT+="%{$fg_bold[blue]%}%_$(prompt_char)%{$reset_color%} "
+#     echo $PROMPT
+# }
+# 
+# PROMPT="\$(get_prompt)"
 # }}}
 
 # Less coloring {{{

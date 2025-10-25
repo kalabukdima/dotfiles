@@ -11,6 +11,8 @@ touch ~/config/.tmux.conf.local
 
 ln -sfv ~/config/.gitconfig ~
 
+ln -sfv ~/config/.p10k.zsh ~
+
 mkdir -p ~/.config
 ln -sfv ~/config/ranger/ ~/.config/
 
