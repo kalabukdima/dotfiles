@@ -1,6 +1,6 @@
 [user]
 	email = kalabukdima@gmail.com
-	name = Kalabuk Dzmitry
+	name = Dzmitry Kalabuk
 [core]
 	editor = vim
 	excludesFile = ~/.gitignore
@@ -21,10 +21,22 @@
 	path = ~/config/.gitconfig.local
 [pull]
 	ff = only
+	rebase = true
 [push]
 	autoSetupRemote = true
 [init]
 	defaultBranch = master
 
-[includeIf "gitdir:~/space/proxima/"]
-	path = ~/space/proxima/.gitconfig
+[includeIf "gitdir:~/space/sqd/"]
+	path = ~/space/sqd/.gitconfig
+[credential]
+	helper = store
+[advice]
+	diverging = false
+[rebase]
+	autoStash = on
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
